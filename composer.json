@@ -1,0 +1,20 @@
+{
+  "name": "goux_paul/food_trucks_upfluence",
+  "description": "Pre-internship test proposed by upfluence",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Paul Goux",
+      "email": "paul.goux@wanadoo.fr"
+    }
+  ],
+  "require": {
+    "slim/slim": "3.*"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2.18"
+    }
+  }
+}
