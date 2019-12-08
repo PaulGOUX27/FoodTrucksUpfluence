@@ -9,8 +9,14 @@
       "email": "paul.goux@wanadoo.fr"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "FoodTruckUpfluence\\": "src/"
+    }
+  },
   "require": {
-    "slim/slim": "3.*"
+    "slim/slim": "3.*",
+    "guzzlehttp/guzzle": "6.4.1"
   },
   "config": {
     "platform": {
