@@ -56,6 +56,12 @@ params = {'longitude': longitude,
 		'latitude': latitude,
 		'limit': limit}
 r = requests.get(url = URL, params = params)
+
+if r.status_code != 200 :
+	print('Backend Error : ')
+	print(r.text)
+	sys.exit(1)
+
 bodyResponse = r.json()
 
 for foodTruck in bodyResponse :
