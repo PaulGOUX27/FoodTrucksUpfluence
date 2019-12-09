@@ -22,14 +22,10 @@ class FoodTruckApp
      */
     public function __construct()
     {
-        $configuration = [
-            'settings' => [
-                'displayErrorDetails' => true,
-            ],
-        ];
-        $container = new Container($configuration);
+        $container = new Container(['settings' => ConfigLoader::getConfig()]);
         $this->app = new App($container);
         ServiceRegistrar::register($container);
+        ToolRegistrar::register($container);
 
         $this->app->get('/health', function (Request $request, Response $response){
             $response->getBody()->write('{"health":"OK"}');

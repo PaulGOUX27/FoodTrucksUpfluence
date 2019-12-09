@@ -16,7 +16,9 @@
   },
   "require": {
     "slim/slim": "3.*",
-    "guzzlehttp/guzzle": "6.4.1"
+    "guzzlehttp/guzzle": "6.4.1",
+    "monolog/monolog": "^2.0@dev",
+    "ext-json": "*"
   },
   "config": {
     "platform": {
