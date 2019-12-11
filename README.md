@@ -49,24 +49,16 @@ The answers are compared with the expected values.
 
 I have chose PHP and a the Slim framework because a already work using this framework.
 It's organised following service layer pattern, adding new endpoints will be easy.
-Searching using a SOQL query directly in the query to the dataset prevents the return from receiving many unnecessary data and filtering it.
+Searching using a SOQL query directly in the query to the dataset prevents the return from receiving many unnecessary data and filtering it.  
+`cacert.pem` file can be found [here](https://curl.haxx.se/docs/caextract.html)
 
 ## Command line interface
 
-CLI use python3.  
-You might probably have to install `requests` : 
-
-    pip install requests
-
-### Usage
-CLI is located in `srcCLI` directory.
-Upon in this directory, to see entire help, type :
-
-        python3 foodTruckUpfluenceCLI.py --help
+This project also has a CLI to consume it [here](https://github.com/PaulGOUX27/FoodTrucksUpfluenceCLI).
         
 ## Go further
 Here are some aspect to improve or add to the project : 
 * Dockerize backend to deploy independently to the platform
-* Separate backend and CLI in different Git repository
+* Return different [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) depending on the error
 * Project reorganisation (create Tool directory with ConfigLoader and ToolRegistrar, place for cacert.pem and setting.ini)
 * Document API using OpenAPI specification ([Swagger](https://swagger.io/specification/))
