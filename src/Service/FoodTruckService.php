@@ -27,21 +27,24 @@ class FoodTruckService
     }
 
     /**
-     * @param array $body
+     * @param array $params
      * @return StreamInterface
      * @throws Exception
      */
-    public function getNearestFoodTruck(array $body)
+    public function getNearestFoodTruck(array $params)
     {
-        if(!isset($body['latitude']) || !isset($body['longitude'])) {
+        if(!isset($params['latitude']) || !isset($params['longitude'])) {
             $msg = "Parameters 'longitude' and 'latitude' are required";
             $this->logger->error($msg);
             throw new Exception($msg);
         }
 
-        $latitude = $body['latitude'];
-        $longitude = $body['longitude'];
-        $limit = $body['limit'];
+        $latitude = intval($params['latitude']);
+        $longitude = intval($params['longitude']);
+        if(isset($params['limit']))
+            $limit = intval($params['limit']);
+        else
+            $limit = 5;
 
         if($limit < 0){
             $msg = "'limit' must be > 0";

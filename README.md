@@ -5,19 +5,18 @@ The objective of this mini-project is to provide a backend and a CLI to find the
 ##Backend
 
 ###Install and start
-Backend is write in **PHP 7.2** using [Slim framework](http://www.slimframework.com/).
+Backend is write in **PHP 7.2** using [Slim framework](http://www.slimframework.com/) to provide an API.
 It's a [Composer](https://getcomposer.org/) project. To install project run  
 
     composer install
 
 To start the back run.
 
-    cd src
-    php -S localhost:8080 
+    php -S localhost:8080 -t src src/index.php 
     
 Default port is **8080**, this port is used in the CLI.
 
-###Endpoint documentation
+###API documentation
 Every endpoint is preceded by `localhost:8080`
 * `/health` : return `{"health":"OK"}` as text. Useful to test if the back is currently running and everything is ok.
 * `/food-trucks` :
@@ -29,12 +28,22 @@ Every endpoint is preceded by `localhost:8080`
         * 200 : in case of success, returns the limit food trucks closest to the longitude/latitude point
         * 500 : an error occurred
 
+###Running tests
+
+Automated tests are located in the `tests` directory. To run them : 
+
+    ./vendor/bin/phpunit ./tests/FoodTruckUpfluenceTests
+    
+These tests use the API from the outside, testing the endpoints and parameters.
+The answers are compared with the expected values.
+
 ###Backend features
 
 * [Composer](https://getcomposer.org/) project
 * [Slim framework](http://www.slimframework.com/)
 * [Monologue](https://github.com/Seldaek/monolog) logger
 * [Guzzle](http://docs.guzzlephp.org/en/stable/) http request
+* [PHPUnit](https://phpunit.de/) Unit test
 
 ###Backend explanation
 
